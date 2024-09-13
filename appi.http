@@ -1,0 +1,33 @@
+### Get movies
+GET http://localhost:1234/movies
+
+### Get a movie by ID
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+###Get all movies by genre
+GET http://localhost:1234/movies?genre=Sci-Fi
+
+###Crear una pelicula (POST)
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "id": "c906673b-3948-4402-ac7f-73ac3a9e3105",
+  "title": "The Matrix",
+  "year": 1999,
+  "director": "Lana Wachowski",
+  "duration": 136,
+  "poster": "https://i.ebayimg.com/images/g/QFQAAOSwAQpfjaA6/s-l1200.jpg",
+  "genre": ["Action", "Sci-Fi"],
+  "rate": 8.7
+}
+
+### Actualizar una pelicula (PATCH)
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "id": "123",
+    "title": "The Shawshank Redemption",
+    "year": "1998"
+}
